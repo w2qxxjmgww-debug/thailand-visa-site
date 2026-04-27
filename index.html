@@ -7,26 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{
-    --navy:#0B2545;
-    --blue:#1B5FA8;
-    --sky:#3A8FD9;
-    --gold:#C8960C;
-    --light:#F4F8FC;
-    --white:#FFFFFF;
-    --text:#1A2B3C;
-    --muted:#5A7A99;
-    --border:#D4E3F0;
-  }
+  :root{--navy:#0B2545;--blue:#1B5FA8;--sky:#3A8FD9;--light:#F4F8FC;--white:#FFFFFF;--text:#1A2B3C;--muted:#5A7A99;--border:#D4E3F0;}
   body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white)}
   a{text-decoration:none;color:inherit}
   nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);letter-spacing:0.3px}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--white)}
   .nav-logo span{color:#F0C84A}
   .nav-links{display:flex;gap:32px}
   .nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.5px;text-transform:uppercase;transition:color 0.2s}
   .nav-links a:hover{color:var(--white)}
-  .nav-cta{background:#F0C84A;color:var(--navy);padding:9px 20px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:0.3px;transition:opacity 0.2s}
+  .nav-cta{background:#F0C84A;color:var(--navy);padding:9px 20px;border-radius:4px;font-size:13px;font-weight:500;transition:opacity 0.2s}
   .nav-cta:hover{opacity:0.9}
   .hero{background:linear-gradient(135deg,var(--navy) 0%,#1B4B82 60%,#1B5FA8 100%);padding:90px 5% 80px;display:flex;align-items:center;gap:60px;min-height:520px;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;right:-100px;top:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(240,200,74,0.08) 0%,transparent 70%);pointer-events:none}
@@ -44,7 +34,7 @@
   .stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:600;color:#F0C84A}
   .stat-label{font-size:13px;color:rgba(255,255,255,0.55);margin-top:2px;font-weight:300}
   .hero-visual{flex:0 0 340px;display:flex;flex-direction:column;gap:12px}
-  .hero-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:10px;padding:18px 20px;backdrop-filter:blur(4px)}
+  .hero-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:10px;padding:18px 20px}
   .hero-card-label{font-size:11px;text-transform:uppercase;letter-spacing:0.8px;color:rgba(255,255,255,0.45);margin-bottom:8px}
   .hero-card-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:4px}
   .hero-card-sub{font-size:13px;color:rgba(255,255,255,0.55);font-weight:300}
@@ -55,7 +45,7 @@
   .section-sub{font-size:16px;color:var(--muted);font-weight:300;line-height:1.7;max-width:560px}
   .section-header{margin-bottom:48px}
   .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-  .service-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px;transition:box-shadow 0.2s,transform 0.2s;cursor:default}
+  .service-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px;transition:box-shadow 0.2s,transform 0.2s}
   .service-card:hover{box-shadow:0 8px 32px rgba(11,37,69,0.1);transform:translateY(-2px)}
   .service-icon{width:48px;height:48px;background:var(--light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:22px}
   .service-card h3{font-size:17px;font-weight:500;color:var(--navy);margin-bottom:8px}
@@ -93,6 +83,7 @@
   .contact-item-text{font-size:14px;color:var(--muted);font-weight:300;line-height:1.5}
   .contact-item-label{font-size:12px;font-weight:500;color:var(--text);margin-bottom:2px}
   .contact-item-text a{color:var(--sky)}
+  .success-msg{display:none;background:#e6f9f0;border:1px solid #a3e6c8;color:#1a6e45;padding:14px 18px;border-radius:6px;font-size:14px;margin-top:16px;text-align:center}
   footer{background:var(--navy);padding:36px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
   footer .logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--white)}
   footer .logo span{color:#F0C84A}
@@ -283,15 +274,15 @@
     <h3>Request a Free Quote</h3>
     <div class="form-group">
       <label>Full Name</label>
-      <input type="text" placeholder="Your full name">
+      <input type="text" id="fname" placeholder="Your full name">
     </div>
     <div class="form-group">
       <label>Email Address</label>
-      <input type="email" placeholder="your@email.com">
+      <input type="email" id="femail" placeholder="your@email.com">
     </div>
     <div class="form-group">
       <label>Visa Type</label>
-      <select>
+      <select id="fvisa">
         <option>Tourist / Visit Visa</option>
         <option>Work & Business Visa</option>
         <option>Student / ED Visa</option>
@@ -301,9 +292,10 @@
     </div>
     <div class="form-group">
       <label>Message (optional)</label>
-      <textarea placeholder="Tell us about your situation..."></textarea>
+      <textarea id="fmessage" placeholder="Tell us about your situation..."></textarea>
     </div>
-    <button onclick="alert('Thank you! We will be in touch within 24 hours.')" style="width:100%;background:var(--navy);color:white;padding:13px;border:none;border-radius:6px;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">Send Enquiry</button>
+    <button id="submitBtn" onclick="submitForm()" style="width:100%;background:var(--navy);color:white;padding:13px;border:none;border-radius:6px;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">Send Enquiry</button>
+    <div class="success-msg" id="successMsg">✅ Thank you! We'll be in touch within 24 hours.</div>
   </div>
 </section>
 
@@ -317,5 +309,39 @@
   </div>
 </footer>
 
+<script>
+async function submitForm() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const visa = document.getElementById('fvisa').value;
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/xzdylzzz', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({name, email, visa_type: visa, message})
+    });
+    if (res.ok) {
+      document.getElementById('successMsg').style.display = 'block';
+      btn.textContent = 'Sent!';
+      document.getElementById('fname').value = '';
+      document.getElementById('femail').value = '';
+      document.getElementById('fmessage').value = '';
+    } else {
+      btn.textContent = 'Send Enquiry';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  } catch(e) {
+    btn.textContent = 'Send Enquiry';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  }
+}
+</script>
 </body>
 </html>
